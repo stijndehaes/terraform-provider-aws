@@ -18,6 +18,43 @@ import (
 	"github.com/hashicorp/terraform-provider-aws/internal/conns"
 	tftags "github.com/hashicorp/terraform-provider-aws/internal/tags"
 	"github.com/hashicorp/terraform-provider-aws/internal/verify"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
+	tfdms "github.com/hashicorp/terraform-provider-aws/internal/service/dms"
 )
 
 func ResourceEndpoint() *schema.Resource {
@@ -103,7 +140,7 @@ func ResourceEndpoint() *schema.Resource {
 			"engine_name": {
 				Type:         schema.TypeString,
 				Required:     true,
-				ValidateFunc: validation.StringInSlice(tfdms.EngineName_Values(), false),
+				ValidateFunc: validation.StringInSlice(tfdms.engineName_Values(), false),
 			},
 			"extra_connection_attributes": {
 				Type:             schema.TypeString,
@@ -126,7 +163,7 @@ func ResourceEndpoint() *schema.Resource {
 						"topic": {
 							Type:     schema.TypeString,
 							Optional: true,
-							Default:  tfdms.KafkaDefaultTopic,
+							Default:  tfdms.kafkaDefaultTopic,
 						},
 					},
 				},
@@ -180,8 +217,8 @@ func ResourceEndpoint() *schema.Resource {
 						"auth_mechanism": {
 							Type:         schema.TypeString,
 							Optional:     true,
-							Default:      tfdms.MongoDbAuthMechanismValueDefault,
-							ValidateFunc: validation.StringInSlice(tfdms.MongoDbAuthMechanismValue_Values(), false),
+							Default:      tfdms.mongoDBAuthMechanismValueDefault,
+							ValidateFunc: validation.StringInSlice(tfdms.mongoDBAuthMechanismValue_Values(), false),
 						},
 						"nesting_level": {
 							Type:         schema.TypeString,
@@ -202,7 +239,7 @@ func ResourceEndpoint() *schema.Resource {
 						"auth_source": {
 							Type:     schema.TypeString,
 							Optional: true,
-							Default:  tfdms.MongoDbAuthSourceAdmin,
+							Default:  tfdms.mongoDBAuthSourceAdmin,
 						},
 					},
 				},
@@ -256,8 +293,8 @@ func ResourceEndpoint() *schema.Resource {
 						"compression_type": {
 							Type:         schema.TypeString,
 							Optional:     true,
-							Default:      tfdms.S3SettingsCompressionTypeNone,
-							ValidateFunc: validation.StringInSlice(tfdms.S3SettingsCompressionType_Values(), false),
+							Default:      tfdms.s3SettingsCompressionTypeNone,
+							ValidateFunc: validation.StringInSlice(tfdms.s3SettingsCompressionType_Values(), false),
 						},
 						"date_partition_enabled": {
 							Type:     schema.TypeBool,
@@ -284,8 +321,8 @@ func ResourceEndpoint() *schema.Resource {
 						"encryption_mode": {
 							Type:         schema.TypeString,
 							Optional:     true,
-							Default:      tfdms.S3SettingsEncryptionModeSseS3,
-							ValidateFunc: validation.StringInSlice(tfdms.S3SettingsEncryptionMode_Values(), false),
+							Default:      tfdms.s3SettingsEncryptionModeSseS3,
+							ValidateFunc: validation.StringInSlice(tfdms.s3SettingsEncryptionMode_Values(), false),
 						},
 						"server_side_encryption_kms_key_id": {
 							Type:     schema.TypeString,
