@@ -15,6 +15,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
 	"github.com/hashicorp/terraform-provider-aws/aws/internal/keyvaluetags"
 	tfdms "github.com/hashicorp/terraform-provider-aws/aws/internal/service/dms"
+	"github.com/hashicorp/terraform-provider-aws/internal/conns"
 )
 
 func resourceAwsDmsEndpoint() *schema.Resource {
@@ -318,8 +319,8 @@ func resourceAwsDmsEndpoint() *schema.Resource {
 }
 
 func resourceAwsDmsEndpointCreate(d *schema.ResourceData, meta interface{}) error {
-	conn := meta.(*AWSClient).dmsconn
-	defaultTagsConfig := meta.(*AWSClient).DefaultTagsConfig
+	conn := meta.(*conns.AWSClient).DMSConn
+	defaultTagsConfig := meta.(*conns.AWSClient).DefaultTagsConfig
 	tags := defaultTagsConfig.MergeTags(keyvaluetags.New(d.Get("tags").(map[string]interface{})))
 
 	request := &dms.CreateEndpointInput{
@@ -447,9 +448,9 @@ func resourceAwsDmsEndpointCreate(d *schema.ResourceData, meta interface{}) erro
 }
 
 func resourceAwsDmsEndpointRead(d *schema.ResourceData, meta interface{}) error {
-	conn := meta.(*AWSClient).dmsconn
-	defaultTagsConfig := meta.(*AWSClient).DefaultTagsConfig
-	ignoreTagsConfig := meta.(*AWSClient).IgnoreTagsConfig
+	conn := meta.(*conns.AWSClient).DMSConn
+	defaultTagsConfig := meta.(*conns.AWSClient).DefaultTagsConfig
+	ignoreTagsConfig := meta.(*conns.AWSClient).IgnoreTagsConfig
 
 	response, err := conn.DescribeEndpoints(&dms.DescribeEndpointsInput{
 		Filters: []*dms.Filter{
@@ -494,7 +495,7 @@ func resourceAwsDmsEndpointRead(d *schema.ResourceData, meta interface{}) error 
 }
 
 func resourceAwsDmsEndpointUpdate(d *schema.ResourceData, meta interface{}) error {
-	conn := meta.(*AWSClient).dmsconn
+	conn := meta.(*conns.AWSClient).DMSConn
 
 	request := &dms.ModifyEndpointInput{
 		EndpointArn: aws.String(d.Get("endpoint_arn").(string)),
@@ -692,7 +693,7 @@ func resourceAwsDmsEndpointUpdate(d *schema.ResourceData, meta interface{}) erro
 }
 
 func resourceAwsDmsEndpointDelete(d *schema.ResourceData, meta interface{}) error {
-	conn := meta.(*AWSClient).dmsconn
+	conn := meta.(*conns.AWSClient).DMSConn
 
 	request := &dms.DeleteEndpointInput{
 		EndpointArn: aws.String(d.Get("endpoint_arn").(string)),
