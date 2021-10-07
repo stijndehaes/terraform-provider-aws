@@ -13,8 +13,8 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	"github.com/terraform-providers/terraform-provider-aws/aws/internal/keyvaluetags"
-	tfdms "github.com/terraform-providers/terraform-provider-aws/aws/internal/service/dms"
+	"github.com/hashicorp/terraform-provider-aws/aws/internal/keyvaluetags"
+	tfdms "github.com/hashicorp/terraform-provider-aws/aws/internal/service/dms"
 )
 
 func resourceAwsDmsEndpoint() *schema.Resource {
